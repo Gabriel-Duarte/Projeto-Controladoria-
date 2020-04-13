@@ -1,0 +1,83 @@
+create database orcamento 
+
+create table tbl_funcionario (
+
+id int NOT NULL AUTO_INCREMENT,
+
+Funcionario varchar (30) ,
+
+admissao date ,
+
+setor varchar(10) ,
+
+cargo varchar (20) ,
+
+salario double ,
+
+salMensal double,
+
+Encargo double,
+
+convMed double,
+
+seis double,
+
+valTransporte double,
+
+cesta double,
+
+beneficos double,
+
+custoTOT double,
+
+primary key (id)
+
+)
+create table tbl_Permissoes (
+id int,
+pintura Boolean,
+estoquePA Boolean,
+Expedicao Boolean,
+admIndustrial Boolean,
+estroqueDEmateria Boolean,
+manutencao Boolean,
+Seguranca Boolean,
+ferramentaria Boolean,
+injecao Boolean,
+Vendas Boolean,
+Recepcao Boolean, 
+Financeiro Boolean,
+compras Boolean,
+controladoria Boolean,
+Rh Boolean,
+CONSTRAINT Permissoes FOREIGN KEY (id) REFERENCES tbl_login (id)
+)
+create table tbl_Permissoes (
+id int,
+setor Char,
+permissao Boolean,
+CONSTRAINT permissoes FOREIGN KEY (id) REFERENCES tbl_login (id)
+)
+create table tbl_login(
+id int NOT NULL AUTO_INCREMENT,
+login varchar(10) ,
+senha int ,
+tipo varchar(10),
+primary key (id)
+)
+use orcamento
+select *  from tbl_funFuncionario
+
+
+insert into tbl_login(login, senha, tipo)
+values("admin",123456,"admin")
+
+insert into tbl_login(login, senha, tipo)
+values("adm",123456,"user")
+
+insert into tbl_login(login, senha, tipo)
+values("gabriel",123456,"SuperAdmin")
+
+select * from tbl_funciotbl_login
+select * from tbl_login
+ALTER TABLE  tbl_login ADD tipo VARCHAR(20) ;
